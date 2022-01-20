@@ -1,0 +1,14 @@
+.pizzaWrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+}
+.chasto{
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    margin: 16px 0px;
+
+}

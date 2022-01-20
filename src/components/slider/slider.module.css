@@ -1,0 +1,19 @@
+.wrapper img {
+    border-radius: 35px;
+    margin-top: 50px;
+}
+.wrapper ul {
+    bottom:20px
+}
+.wrapper li button:before {
+    
+    font-size: 20px !important;
+}
+.wrapper button{
+    background-color:rgb(59, 56, 55);
+    color: white;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    
+}

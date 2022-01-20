@@ -1,0 +1,80 @@
+.navka{
+    width: 1200px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+.btn{
+    background-color: orangered;
+    outline: none;
+    border: none;
+    border-radius: 1200px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin-left: 50px;
+    height: 40px;
+    width: 100px;
+}
+.ull{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    align-items: center;
+    
+}
+.mig::before{
+    content: " ";
+    background: red;
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    left: -14px;
+    bottom: 25px;
+    border-radius: 50%;
+    animation: 2s ease-in-out 0s infinite normal none running pulse;
+}
+.mig{
+    display: inline-block;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    padding: 22px 0px;
+    
+    font-size: 14px;
+    line-height: 1;
+    transition: color 0.25s ease 0s, padding 0.25s ease 0s;
+    margin-left: 14px;
+    position: relative;
+}
+
+.modal{
+    width: 500px;
+    height: 100vh;
+    background: rgb(243, 243, 247);
+    position: absolute;
+    top: 0%;
+    right: 0;
+    z-index: 9;
+    transition: all 0.3s linear;
+}
+
+.modalWrapper{
+    height: 100vh;
+    width: 100vw;
+    background: #00000070;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    left: 100%;
+    transition: all 0.3s linear;
+}
+
+
+.opened{
+    left: 0;
+}
