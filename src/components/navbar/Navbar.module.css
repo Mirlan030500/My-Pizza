@@ -78,3 +78,58 @@
 .opened{
     left: 0;
 }
+.wrapper{
+    background-color: white;
+    height: 130px;
+}
+.mp{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+.img2{
+    width: 70px;
+    height: 70px;
+}
+.btn2{
+    background-color:rgb(211, 211, 230) ;
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    width:70px;
+    
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    width: 460px;
+    padding: 15px;
+}
+button{
+    background-color:rgb(211, 211, 230) ;
+    border-style: none;
+    
+
+}
+.wrapper1{
+    padding: 20px;
+}
+.often{
+    display: flex;
+    justify-content: space-between;
+}
+.often1{
+    background-color: white;
+    border-radius: 5px;
+    height: 110px;
+    width: 80px;
+    align-items: center;
+}
+.often2{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+}
