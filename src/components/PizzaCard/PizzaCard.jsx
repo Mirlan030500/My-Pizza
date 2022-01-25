@@ -2,17 +2,14 @@ import css from './PizzaCard.module.css';
 
 export default function PizzaCard({setBasket, ...props}) {
     const onSelect = () => {
+        let count = 0 ;
         const basket = JSON.parse(localStorage.getItem("basket")) || []
-        basket.forEach((item, index) => {
+        basket.forEach((item) => {
             if (item.id === props.id) {
-                return null
-            }else if (index === basket.length - 1)  {
-                basket.push(props)
-                localStorage.setItem("basket", JSON.stringify(basket))
-                setBasket(basket)
+                count++
             }
         })
-        if (basket.length === 0) {
+        if (count === 0) {
             basket.push(props)
             localStorage.setItem("basket", JSON.stringify(basket))
             setBasket(basket)
