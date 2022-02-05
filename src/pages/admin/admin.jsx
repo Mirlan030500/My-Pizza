@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import css from './Admin.module.css'
 import { useState } from 'react'
+import axios from 'axios'
 
 export default function Admin({setIsAuth}) {
     const [user, setUser] = useState("");
@@ -12,29 +13,22 @@ export default function Admin({setIsAuth}) {
     const submit = (e) => {
         e.preventDefault();
         setIsDisabled(true)
-        fetch("https://pizza-app-ulan.herokuapp.com/admin", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
+        axios.post("https://pizza-app-ulan.herokuapp.com/admin", {
+
                 login: user,
                 password: password
-            })
+        
         })
         .finally(()=>{
             setIsDisabled(false)
         })
+            
             .then((res) => {
-                console.log(res);
-                return res.json()
-            })
-            .then((data) => {
-                console.log(data);
-                if (data?.token) {
-                    setIsAuth(data)
+               
+                if (res.data?.token) {
+                    setIsAuth(res.data)
                 } else {
-                    setError(data.msg)
+                    setError(res.data.msg)
                 }
             })
             .catch((error) => {

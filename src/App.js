@@ -20,6 +20,7 @@ import Dashboard from './pages/dashboard/Dashboard'
 function App() {
   const [basket, setBasket] = useState(JSON.parse(localStorage.getItem('basket')) || [])
   const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem("auth")) || null);
+  const [pizza, setPizza] = useState([]);
   
 
   useEffect(() => {
@@ -46,7 +47,7 @@ function App() {
           {/* <Route path="/admin">
             <Admin setIsAuth={setIsAuth} />
           </Route> */}
-             <PrivateRoute path="/dashboard" auth={isAuth} component={Dashboard} />
+             <PrivateRoute path="/dashboard" auth={isAuth} component={()=><Dashboard setIsAuth={setIsAuth} setPizza={setPizza} pizza={pizza} />}/>
           {/* <Route path="/dashboard">
             dashboard
           </Route> */}
