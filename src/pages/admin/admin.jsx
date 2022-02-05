@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import css from './Admin.module.css'
 import { useState } from 'react'
 import axios from 'axios'
+import {useDispatch} from 'react-redux'
 
 export default function Admin({setIsAuth}) {
     const [user, setUser] = useState("");
@@ -9,6 +10,7 @@ export default function Admin({setIsAuth}) {
     const history = useHistory()
     const [error, setError] = useState("")
     const [isDisabled,setIsDisabled] = useState(false)
+    const dispatch = useDispatch();
 
     const submit = (e) => {
         e.preventDefault();
@@ -26,7 +28,11 @@ export default function Admin({setIsAuth}) {
             .then((res) => {
                
                 if (res.data?.token) {
-                    setIsAuth(res.data)
+                    //setIsAuth(res.data)
+                    dispatch({
+                        type:"success authorization",
+                        payload: res.data
+                    })
                 } else {
                     setError(res.data.msg)
                 }

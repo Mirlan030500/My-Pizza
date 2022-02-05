@@ -4,6 +4,7 @@ import PizzaCard from "../../components/PizzaCard/PizzaCard";
 import css from './Main.module.css'
 import MySlider from "../../components/slider/Slider";
 import Slider from "react-slick";
+import Api from "../../api/api"
 
 export default function Main(props) {
     const [pizzas, setPizzas] = useState([]);

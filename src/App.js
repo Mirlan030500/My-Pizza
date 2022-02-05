@@ -15,17 +15,19 @@ import Admin from './pages/admin/admin';
 import PublicRoute from './route/PublicRoute';
 import PrivateRoute from './route/PrivateRoute'
 import Dashboard from './pages/dashboard/Dashboard'
+import {useSelector} from 'react-redux'
 
 
 function App() {
   const [basket, setBasket] = useState(JSON.parse(localStorage.getItem('basket')) || [])
-  const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem("auth")) || null);
-  const [pizza, setPizza] = useState([]);
-  
+  // const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem("auth")) || null);
+  // const [pizza, setPizza] = useState([]);
+  const authData = useSelector((state) => state.auth.data)
+
 
   useEffect(() => {
-    localStorage.setItem("auth", JSON.stringify(isAuth))
-  }, [isAuth])
+    localStorage.setItem("auth", JSON.stringify(authData))
+  }, [authData])
   return (
 
     <Router>
@@ -43,14 +45,14 @@ function App() {
 
           </Route>
 
-          <PublicRoute path="/admin" auth={isAuth} component={() => <Admin setIsAuth={setIsAuth} />} />
-          {/* <Route path="/admin">
-            <Admin setIsAuth={setIsAuth} />
-          </Route> */}
-             <PrivateRoute path="/dashboard" auth={isAuth} component={()=><Dashboard setIsAuth={setIsAuth} setPizza={setPizza} pizza={pizza} />}/>
-          {/* <Route path="/dashboard">
-            dashboard
-          </Route> */}
+          <PublicRoute path="/admin" 
+          component={Admin}
+          />
+          
+             <PrivateRoute path="/dashboard" 
+             component={Dashboard}
+             />
+         
         </Switch>
       </div>
     </Router>
