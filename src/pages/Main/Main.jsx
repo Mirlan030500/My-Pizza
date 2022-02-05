@@ -9,12 +9,10 @@ export default function Main(props) {
     const [pizzas, setPizzas] = useState([]);
    
     useEffect(() => {
-        fetch("https://pizza-app-ulan.herokuapp.com/getall/pizza")
-            .then((res) => res.json())
-            .then((data) => {
-              setPizzas(data.data.data)
-            //   localStorage.setItem("menu", JSON.stringify(data))
-            })
+        Api.getAllPizzas()
+        .then((res)=> {
+            setPizzas(res.data.data.data)
+        })
             .catch((error) => console.log(error))
     }, []);
 

@@ -52,7 +52,7 @@ export default function Navbar({ basket }) {
             <hr />
             <div className={style.footer}>
               <h3>1058 сом</h3>
-              <div className={style.btn2}><button type="button"><svg width="10" height="10" viewBox="0 0 10 10" ><rect fill="#454B54" y="4" width="10" height="2" rx="1"></rect></svg></button><div >2</div><button data-testid="menu__meta-product_add-control" type="button"><svg width="10" height="10" viewBox="0 0 10 10" class="icon"><g fill="#454B54"><rect x="4" width="2" height="10" ry="1"></rect><rect y="4" width="10" height="2" rx="1"></rect></g></svg></button></div>
+              <div className={style.btn2}><button className={style.bnt} type="button"><svg width="10" height="10" viewBox="0 0 10 10" ><rect fill="#454B54" y="4" width="10" height="2" rx="1"></rect></svg></button><div >2</div><button data-testid="menu__meta-product_add-control" type="button"><svg width="10" height="10" viewBox="0 0 10 10" class="icon"><g fill="#454B54"><rect x="4" width="2" height="10" ry="1"></rect><rect y="4" width="10" height="2" rx="1"></rect></g></svg></button></div>
             </div>
 
             <div className={style.wrapper1}>

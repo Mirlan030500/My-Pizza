@@ -1,19 +1,8 @@
-import css from './PizzaCard.module.css';
+import css from './PizzaEdit.module.css';
 
-export default function PizzaCard({setBasket, ...props}) {
+export default function PizzaCard(props) {
     const onSelect = () => {
-        let count = 0 ;
-        const basket = JSON.parse(localStorage.getItem("basket")) || []
-        basket.forEach((item) => {
-            if (item.id === props.id) {
-                count++
-            }
-        })
-        if (count === 0) {
-            basket.push(props)
-            localStorage.setItem("basket", JSON.stringify(basket))
-            setBasket(basket)
-        }
+       
     }
     return (
         <div>
@@ -30,7 +19,7 @@ export default function PizzaCard({setBasket, ...props}) {
                 <div className={css.footer}>
                     <div className={css.price}> от {props.price} сом</div>
 
-                    <button onClick={onSelect}>выбрать</button>
+                    <button onClick={onSelect}>Изменить</button>
 
 
                 </div>
