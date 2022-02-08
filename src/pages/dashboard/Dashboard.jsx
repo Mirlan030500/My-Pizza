@@ -6,6 +6,8 @@ import PizzaEdit from '../../components/PizzaEdit/PizzaEdit';
 import css from './Dashboard.module.css';
 import Api from '../../api/api';
 import { useDispatch } from 'react-redux';
+import { AUTH_LOGOUT } from '../../redux/reducers/actionTypes';
+import { logoutAuth } from '../../redux/reducers/actions/authAction';
 
 export default function Dashboard({ }) {
   const [pizzas, setPizzas] = useState([]);
@@ -33,7 +35,7 @@ export default function Dashboard({ }) {
 
 
 
-          <Button onClick={() => dispatch({ type: "logout auth" })} variant="outlined" color="error">
+          <Button onClick={() => dispatch(logoutAuth () )} variant="outlined" color="error">
             Logout
           </Button>
         </ul>

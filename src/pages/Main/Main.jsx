@@ -12,7 +12,7 @@ export default function Main(props) {
     useEffect(() => {
         Api.getAllPizzas()
         .then((res)=> {
-            setPizzas(res.data.data.data)
+            setPizzas(res.data)
         })
             .catch((error) => console.log(error))
     }, []);

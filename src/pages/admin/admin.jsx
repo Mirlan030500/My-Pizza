@@ -3,6 +3,8 @@ import css from './Admin.module.css'
 import { useState } from 'react'
 import axios from 'axios'
 import {useDispatch} from 'react-redux'
+import { SUCCESS_AUTHORIZATION } from "../../redux/reducers/actionTypes";
+import { successAuth } from "../../redux/reducers/actions/authAction";
 
 export default function Admin({setIsAuth}) {
     const [user, setUser] = useState("");
@@ -29,10 +31,7 @@ export default function Admin({setIsAuth}) {
                
                 if (res.data?.token) {
                     //setIsAuth(res.data)
-                    dispatch({
-                        type:"success authorization",
-                        payload: res.data
-                    })
+                    dispatch(successAuth(res.data))
                 } else {
                     setError(res.data.msg)
                 }
